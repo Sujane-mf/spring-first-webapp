@@ -1,0 +1,5 @@
+GET http://localhost:8189/app/
+###
+GET http://localhost:8189/app/product/show_all
+###
+GET http://localhost:8189/app/product/show_product/1
