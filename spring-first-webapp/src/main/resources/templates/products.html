@@ -14,6 +14,8 @@
         <td>ID</td>
         <td>Наименование товара</td>
         <td>Цена</td>
+        <td>Увеличить цену</td>
+        <td>Уменьшить цену</td>
         <td>Переход к товару</td>
     </tr>
     </thead>
@@ -22,6 +24,12 @@
         <td th:text="${pr.id}"></td>
         <td th:text="${pr.name}"></td>
         <td th:text="${pr.cost}"></td>
+        <td>
+            <a th:href="@{'/product/increase/' + ${pr.id}}" type="button" class="btn btn-info">+</a>
+        </td>
+        <td>
+            <a th:href="@{'/product/decrease/' + ${pr.id}}" type="button" class="btn btn-info">-</a>
+        </td>
         <td>
             <a th:href="@{'/product/show_product/' + ${pr.id}}" type="button" class="btn btn-info">Посмотреть товар</a>
         </td>

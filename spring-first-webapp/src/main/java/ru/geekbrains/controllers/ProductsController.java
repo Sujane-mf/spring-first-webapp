@@ -49,4 +49,22 @@ public class ProductsController {
         productsService.createProduct(new Product(id, name,cost));
         return "redirect:/product/show_all";
     }
+
+    // GET http://localhost:8189/app/product/increase/{id}
+    @GetMapping("product/increase/{id}")
+
+    public String increaseProductCost(Model model, @PathVariable Long id){
+        model.addAttribute("product", productsService.getProductByID(id));
+        productsService.increaseProductCost(id);
+        return "redirect:/product/show_all";
+    }
+
+    // GET http://localhost:8189/app/product/increase/{id}
+    @GetMapping("product/decrease/{id}")
+
+    public String decreaseProductCost(Model model, @PathVariable Long id){
+        model.addAttribute("product", productsService.getProductByID(id));
+        productsService.decreaseProductCost(id);
+        return "redirect:/product/show_all";
+    }
 }
