@@ -28,4 +28,8 @@ public class ProductsService {
     public void createProduct(Product product){
         productsRepository.createProduct(product);
     }
+
+    public void increaseProductCost(Long id){productsRepository.increaseTheCost(id);}
+
+    public void decreaseProductCost(Long id){productsRepository.decreaseTheCost(id);}
 }

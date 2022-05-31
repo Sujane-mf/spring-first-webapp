@@ -35,6 +35,14 @@ public class ProductsRepository {
         products.add(product);
     }
 
+    // метод для увеличения цены товара
+    public void increaseTheCost(long id){
+        getProductByID(id).setCost(getProductByID(id).getCost()+1);
+    }
 
+    //метод для уменьшения цены товара
+    public void decreaseTheCost(long id){
+        getProductByID(id).setCost(getProductByID(id).getCost()-1);
+    }
 
 }
